@@ -140,7 +140,6 @@ done
 # Pick up overlay for features that depend on non-open-source files
 PRODUCT_PACKAGES += \\
     com.qualcomm.location \\
-    MotGeoFenceSvc \\
     TimeService \\
     qcrilmsgtunnel \\
     qcnvitems \\
@@ -184,16 +183,6 @@ EOF
 LOCAL_PATH := \$(call my-dir)
 
 ifneq (\$(filter lux merlin osprey surnia,\$(TARGET_DEVICE)),)
-
-include \$(CLEAR_VARS)
-LOCAL_MODULE := MotGeoFenceSvc
-LOCAL_MODULE_OWNER := $VENDOR
-LOCAL_SRC_FILES := proprietary/app/\$(LOCAL_MODULE)/\$(LOCAL_MODULE).apk
-LOCAL_MODULE_TAGS := optional
-LOCAL_MODULE_SUFFIX := \$(COMMON_ANDROID_PACKAGE_SUFFIX)
-LOCAL_MODULE_CLASS := APPS
-LOCAL_CERTIFICATE := platform
-include \$(BUILD_PREBUILT)
 
 include \$(CLEAR_VARS)
 LOCAL_MODULE := qcrilmsgtunnel
