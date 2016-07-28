@@ -16,7 +16,7 @@
 
 package com.cyanogenmod.settings.device;
 
-import com.android.internal.util.slim.DeviceUtils;
+//import com.android.internal.util.slim.DeviceUtils;
 
 import android.app.ActionBar;
 import android.app.AlertDialog;
@@ -88,9 +88,9 @@ public class TouchscreenGestureSettings extends PreferenceActivity {
         super.onResume();
 
         // If running on a phone, remove padding around the listview
-        if (!DeviceUtils.isTablet(this)) {
+       // if (!DeviceUtils.isTablet(this)) {
             getListView().setPadding(0, 0, 0, 0);
-        }
+       // }
 
         if (mNotificationManager.isNotificationPolicyAccessGranted() && mFlipClick) {
             mFlipPref.setChecked(true);
